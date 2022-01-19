@@ -5,15 +5,14 @@
  * @returns {string[]}
  */
 export function sortStrings(arr, param = 'asc') {
+  const newArr = arr.slice()
   if (param === 'desc') {
-    return arr.sort((a, b) =>
-      b.localeCompare(a, ['ru', 'en'], { caseFirst: 'upper' })
+    return newArr.sort((a, b) =>
+      b.localeCompare(a, ['ru', 'en'], {caseFirst: 'upper'})
     );
   } else {
-    return arr.sort((a, b) =>
+    return newArr.sort((a, b) =>
       a.localeCompare(b, ['ru', 'en'], {caseFirst: 'upper'})
     );
   }
 }
-console.log(sortStrings(['bc', 'Nya', 'aa', 'Кя', 'br', 'Tu', 'аст'], 'desc'));
-console.log(sortStrings(['ac', 'Nya', 'aa', 'Кя', 'br', 'Tu', 'август']));
