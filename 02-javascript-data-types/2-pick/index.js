@@ -5,7 +5,7 @@
  * @returns {object} - returns the new object
  */
 export const pick = (obj, ...fields) => {
-  let arrayObjects = {};
+  const arrayObjects = {};
   for (let [key, value] of Object.entries(obj)) {
     if (fields.includes(key)) {
       arrayObjects[key] = value;
